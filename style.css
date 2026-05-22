@@ -252,7 +252,7 @@ body {
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 35%, rgba(0,0,0,0.7) 60%, black 80%);
   mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 35%, rgba(0,0,0,0.7) 60%, black 80%);
 }
-.hero-building svg { width: 100%; max-height: 44vh; display: block; }
+.hero-building svg { width: 100%; display: block; }
 
 .magnolia-scene {
   position: absolute; inset: 0;
