@@ -66,24 +66,26 @@ html { scroll-behavior: smooth; }
   color: rgba(212,168,67,.9);
   font-weight: 600;
 }
+.credit-divider {
+  color: rgba(212,168,67,.3);
+  font-size: 0.75rem;
+}
 .credit-ig {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   text-decoration: none;
-  color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.6);
   font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  transition: color .2s, opacity .2s;
-  opacity: 0.9;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  transition: color .2s;
 }
-.credit-ig:hover { color: #fff; opacity: 1; }
-.ig-icon {
-  width: 18px; height: 18px;
-  flex-shrink: 0;
-  border-radius: 4px;
+.credit-ig:hover { color: rgba(255,255,255,.95); }
+.credit-handle {
+  color: rgba(212,168,67,.85);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color .2s;
 }
+.credit-ig:hover .credit-handle { color: #d4a843; }
 @media (max-width: 480px) {
   .credit-bar { gap: 10px; padding: 6px 16px; }
   .credit-text { font-size: 0.72rem; }
