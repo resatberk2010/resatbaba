@@ -14,6 +14,18 @@
   <!-- SABİT SOL YAN MANOLYA AĞACI (sağdakinin aynası) -->
   <div class="side-tree-left" aria-hidden="true">
     <svg viewBox="0 0 160 2340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="rootFadeL" x1="-108" y1="0" x2="160" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="white" stop-opacity="0.05"/>
+          <stop offset="25%"  stop-color="white" stop-opacity="0.18"/>
+          <stop offset="55%"  stop-color="white" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="white" stop-opacity="1"/>
+        </linearGradient>
+        <mask id="rootMaskL" maskUnits="userSpaceOnUse" x="-200" y="-100" width="500" height="2600">
+          <rect x="-200" y="-100" width="500" height="2600" fill="url(#rootFadeL)"/>
+        </mask>
+      </defs>
+      <g mask="url(#rootMaskL)">
       <path d="M118 900 C116 820 114 745 111 668 C108 588 106 508 109 428 C111 348 114 268 112 188 C110 128 108 68 106 10"
             stroke="#5d3a1a" stroke-width="22" fill="none" stroke-linecap="round"/>
       <path d="M124 900 C122 825 120 750 117 672 C114 592 112 512 115 432 C117 352 120 272 118 192"
@@ -119,12 +131,25 @@
             stroke="#8a6240" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.68"/>
       <path d="M6 2248 C4 2286 2 2316 2 2340"
             stroke="#8a6240" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.45"/>
+      </g>
     </svg>
   </div>
 
   <!-- SABİT YAN MANOLYA AĞACI -->
   <div class="side-tree" aria-hidden="true">
     <svg viewBox="0 0 160 2340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="rootFadeR" x1="-108" y1="0" x2="160" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="white" stop-opacity="0.05"/>
+          <stop offset="25%"  stop-color="white" stop-opacity="0.18"/>
+          <stop offset="55%"  stop-color="white" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="white" stop-opacity="1"/>
+        </linearGradient>
+        <mask id="rootMaskR" maskUnits="userSpaceOnUse" x="-200" y="-100" width="500" height="2600">
+          <rect x="-200" y="-100" width="500" height="2600" fill="url(#rootFadeR)"/>
+        </mask>
+      </defs>
+      <g mask="url(#rootMaskR)">
       <!-- Ana gövde -->
       <path d="M118 900 C116 820 114 745 111 668 C108 588 106 508 109 428 C111 348 114 268 112 188 C110 128 108 68 106 10"
             stroke="#5d3a1a" stroke-width="22" fill="none" stroke-linecap="round"/>
@@ -266,6 +291,7 @@
       <path d="M112 924 C114 934 113 944 111 954" stroke="#3d2010" stroke-width="1.5" fill="none" opacity="0.28"/>
       <path d="M110 984 C112 994 111 1004 109 1014" stroke="#3d2010" stroke-width="1.5" fill="none" opacity="0.22"/>
       <path d="M108 1044 C110 1054 109 1064 107 1074" stroke="#3d2010" stroke-width="1.2" fill="none" opacity="0.18"/>
+      </g>
     </svg>
   </div>
 
