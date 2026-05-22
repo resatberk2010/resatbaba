@@ -196,9 +196,8 @@ body {
   width: 100%;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.55;
-  mix-blend-mode: screen;
-  filter: saturate(1.8) brightness(2.4);
+  opacity: 0.82;
+  filter: saturate(1.3) brightness(1.5);
 }
 .hero-building svg { width: 100%; display: block; }
 
