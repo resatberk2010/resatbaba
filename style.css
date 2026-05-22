@@ -42,6 +42,54 @@
 
 html { scroll-behavior: smooth; }
 
+/* ============================================================
+   KREDİ ŞERIDI
+   ============================================================ */
+.credit-bar {
+  position: relative;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 7px 24px;
+  background: linear-gradient(90deg, #0a0e1a 0%, #10162a 40%, #0e1220 60%, #0a0e1a 100%);
+  border-bottom: 1px solid rgba(212,168,67,.2);
+  flex-wrap: wrap;
+}
+.credit-text {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,.65);
+  letter-spacing: 0.3px;
+}
+.credit-text strong {
+  color: rgba(212,168,67,.9);
+  font-weight: 600;
+}
+.credit-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: rgba(255,255,255,.75);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: color .2s, opacity .2s;
+  opacity: 0.9;
+}
+.credit-ig:hover { color: #fff; opacity: 1; }
+.ig-icon {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+@media (max-width: 480px) {
+  .credit-bar { gap: 10px; padding: 6px 16px; }
+  .credit-text { font-size: 0.72rem; }
+  .credit-ig   { font-size: 0.72rem; }
+}
+
 body {
   font-family: 'Inter', sans-serif;
   color: #1a1a2e;
