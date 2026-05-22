@@ -182,7 +182,7 @@ body {
 .magnolia-scene {
   position: absolute; inset: 0;
   z-index: 1;
-  opacity: 0.6;
+  opacity: 0.78;
   pointer-events: none;
 }
 
@@ -1226,6 +1226,158 @@ body {
   color: rgba(255,255,255,.65);
   line-height: 1.6;
   font-style: italic;
+}
+
+/* ============================================================
+   SOL YAN MANOLYA AĞACI
+   ============================================================ */
+.side-tree-left {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 155px;
+  height: 100vh;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0.20;
+  overflow: hidden;
+  transform: scaleX(-1);
+}
+.side-tree-left svg { width: 100%; height: 100%; }
+@media (max-width: 1100px) { .side-tree-left { display: none; } }
+
+/* Sağ ağaç opaklığını artır */
+.side-tree { opacity: 0.24; }
+
+/* ============================================================
+   UÇAN MANOLYA YAPRAKÇIKLARI
+   ============================================================ */
+.falling-petal {
+  position: fixed;
+  top: -28px;
+  border-radius: 50% 45% 55% 40% / 65% 40% 60% 35%;
+  background: radial-gradient(ellipse at 30% 25%,
+    #fdeef6 0%, #f8cede 45%, #efb0c8 100%);
+  pointer-events: none;
+  z-index: 5;
+  animation: petalFall linear both;
+  filter: drop-shadow(0 1px 3px rgba(200,80,130,.12));
+}
+@keyframes petalFall {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg) scale(1); }
+  18%  { transform: translateY(18vh) translateX(calc(var(--drift) * .28)) rotate(calc(var(--rot) * .22)) scale(.96); }
+  38%  { transform: translateY(38vh) translateX(calc(var(--drift) * .55)) rotate(calc(var(--rot) * .48)) scale(1.03); }
+  58%  { transform: translateY(58vh) translateX(calc(var(--drift) * .78)) rotate(calc(var(--rot) * .72)) scale(.97); }
+  82%  { transform: translateY(82vh) translateX(var(--drift))             rotate(calc(var(--rot) * .95)); opacity: inherit; }
+  100% { transform: translateY(112vh) translateX(calc(var(--drift) * 1.1)) rotate(var(--rot)); opacity: 0; }
+}
+
+/* ============================================================
+   TARİHÇE — GENİŞLETİLMİŞ ELEMANLAR
+   ============================================================ */
+
+/* Dönem ayırıcı */
+.timeline-era {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 8px 0 56px;
+  position: relative;
+  z-index: 1;
+}
+.era-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(212,168,67,.45), transparent);
+}
+.era-info { text-align: center; white-space: nowrap; }
+.era-label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.75;
+  margin-bottom: 2px;
+}
+.era-years {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12.5px;
+  color: var(--gray);
+  letter-spacing: 2px;
+}
+
+/* Ortalanmış geniş kart (Hayri Gürden gibi özel figürler için) */
+.timeline-item.center {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+.timeline-item.center .timeline-card {
+  width: 88%;
+  max-width: 860px;
+}
+.timeline-item.center .timeline-dot {
+  left: 50%;
+  top: -24px;
+}
+
+/* Kart içi alıntı (pull quote) */
+.tc-pull-quote {
+  margin: 20px 0 16px;
+  padding: 14px 22px 14px 18px;
+  border-left: 3px solid var(--gold);
+  background: linear-gradient(135deg, rgba(212,168,67,.07), rgba(212,168,67,.02));
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.08rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #3a2800;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+  line-height: 1.65;
+}
+.tc-pull-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  font-size: 3.6rem;
+  color: var(--gold);
+  opacity: .22;
+  line-height: 1;
+  font-family: 'Cormorant Garamond', serif;
+}
+.tc-pull-quote cite {
+  display: block;
+  font-size: .78rem;
+  color: var(--gray);
+  font-style: normal;
+  margin-top: 8px;
+  letter-spacing: .3px;
+}
+
+/* Drop-cap: öne çıkan kartların ilk harfi büyük */
+.tc-text.drop-cap::first-letter {
+  float: left;
+  font-family: 'Cinzel', serif;
+  font-size: 3.6rem;
+  line-height: .76;
+  font-weight: 700;
+  color: var(--red);
+  margin-right: 7px;
+  margin-top: 5px;
+  text-shadow: 0 2px 8px rgba(139,26,26,.18);
+}
+
+/* Tarih bölümü arka plan dokusu */
+.history-section {
+  background:
+    url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 60 C58 52 60 44 62 36 C60 28 58 20 60 12' stroke='%23c8a060' stroke-width='0.5' fill='none' opacity='0.07'/%3E%3Cellipse cx='48' cy='40' rx='7' ry='4' fill='%23c8a060' opacity='0.04' transform='rotate(-20,48,40)'/%3E%3Cellipse cx='72' cy='38' rx='7' ry='4' fill='%23c8a060' opacity='0.04' transform='rotate(20,72,38)'/%3E%3C/svg%3E"),
+    linear-gradient(160deg, #faf8f2 0%, #f7f3eb 40%, #faf8f4 100%);
 }
 
 /* ============================================================

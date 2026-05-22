@@ -117,6 +117,33 @@ const countObserver = new IntersectionObserver((entries) => {
 
 statsNums.forEach(el => countObserver.observe(el));
 
+// Uçan manolya yaprakçıkları
+(function() {
+  const INTERVAL = 1100;
+  const MAX = 16;
+  let count = 0;
+
+  function spawnPetal() {
+    if (count >= MAX) return;
+    count++;
+    const p = document.createElement('div');
+    p.className = 'falling-petal';
+    const size = 7 + Math.random() * 9;
+    const startX = Math.random() * 100;
+    const dur = 7 + Math.random() * 8;
+    const delay = Math.random() * 1.2;
+    const drift = (-35 + Math.random() * 70).toFixed(1);
+    const rot = (Math.random() * 380).toFixed(1);
+    const opacity = (0.22 + Math.random() * 0.32).toFixed(2);
+    p.style.cssText = `width:${size}px;height:${(size*1.65).toFixed(1)}px;left:${startX.toFixed(1)}vw;animation-duration:${dur.toFixed(1)}s;animation-delay:${delay.toFixed(2)}s;--drift:${drift}px;--rot:${rot}deg;opacity:${opacity}`;
+    document.body.appendChild(p);
+    setTimeout(() => { p.remove(); count--; }, (dur + delay + 0.5) * 1000);
+  }
+
+  for (let i = 0; i < 6; i++) setTimeout(spawnPetal, i * 350);
+  setInterval(spawnPetal, INTERVAL);
+})();
+
 // Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
