@@ -46,47 +46,47 @@ html { scroll-behavior: smooth; }
    KREDİ ŞERIDI
    ============================================================ */
 .credit-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1001;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  padding: 6px 24px;
-  background: linear-gradient(90deg, #06080f 0%, #0c1022 40%, #0a0e1c 60%, #06080f 100%);
-  border-bottom: 1px solid rgba(212,168,67,.22);
+  gap: 16px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #f5f0e8 0%, #ede8dc 100%);
+  border-top: 1px solid rgba(212,168,67,.3);
+  border-bottom: 2px solid rgba(212,168,67,.25);
   flex-wrap: wrap;
 }
 .credit-text {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,.65);
+  font-size: 0.82rem;
+  color: #5a4a3a;
   letter-spacing: 0.3px;
+  font-family: 'Cinzel', serif;
 }
 .credit-text strong {
-  color: rgba(212,168,67,.9);
+  color: #8b1a1a;
   font-weight: 600;
 }
 .credit-divider {
-  color: rgba(212,168,67,.3);
-  font-size: 0.75rem;
+  color: rgba(212,168,67,.5);
+  font-size: 0.8rem;
 }
 .credit-ig {
   text-decoration: none;
-  color: rgba(255,255,255,.6);
-  font-size: 0.78rem;
+  color: #5a4a3a;
+  font-size: 0.82rem;
   font-weight: 400;
   letter-spacing: 0.3px;
+  font-family: 'Cinzel', serif;
   transition: color .2s;
 }
-.credit-ig:hover { color: rgba(255,255,255,.95); }
+.credit-ig:hover { color: #1a1a2e; }
 .credit-handle {
-  color: rgba(212,168,67,.85);
-  font-weight: 600;
+  color: #1a3a6b;
+  font-weight: 700;
   letter-spacing: 0.5px;
   transition: color .2s;
 }
-.credit-ig:hover .credit-handle { color: #d4a843; }
+.credit-ig:hover .credit-handle { color: #8b1a1a; }
 @media (max-width: 480px) {
   .credit-bar { gap: 10px; padding: 6px 16px; }
   .credit-text { font-size: 0.72rem; }
@@ -136,7 +136,7 @@ body {
    NAVİGASYON
    ============================================================ */
 #navbar {
-  position: fixed; top: 31px; left: 0; right: 0; z-index: 1000;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   background: linear-gradient(135deg, rgba(8,12,28,0.98) 0%, rgba(14,20,34,0.98) 100%);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(212,168,67,.35);
