@@ -243,16 +243,23 @@ body {
 
 .hero-building {
   position: absolute;
-  bottom: -6vh; left: 0;
+  bottom: 0; left: 0;
   width: 100%;
+  height: 54vh;
+  overflow: hidden;
   pointer-events: none;
   z-index: 1;
-  opacity: 1;
-  filter: brightness(1.15) saturate(1.3);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 35%, rgba(0,0,0,0.7) 60%, black 80%);
-  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 35%, rgba(0,0,0,0.7) 60%, black 80%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 22%, rgba(0,0,0,0.65) 50%, black 78%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 22%, rgba(0,0,0,0.65) 50%, black 78%);
 }
-.hero-building svg { width: 100%; display: block; }
+.hero-building img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: saturate(0.78) brightness(0.62) contrast(1.12);
+}
 
 .magnolia-scene {
   position: absolute; inset: 0;
