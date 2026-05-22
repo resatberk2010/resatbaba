@@ -144,6 +144,24 @@ statsNums.forEach(el => countObserver.observe(el));
   setInterval(spawnPetal, INTERVAL);
 })();
 
+// Manolya ağacı kök paralaks — köklerin aşağıya doğru takip efekti
+(function() {
+  const TREE_TOTAL_VH = 260; // CSS'deki height: 260vh
+  const TREE_EXTRA_VH = TREE_TOTAL_VH - 100; // 160vh extra (kökler)
+
+  function updateTree() {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    if (maxScroll <= 0) return;
+    const progress = Math.min(window.scrollY / maxScroll, 1);
+    const offsetPx = progress * (TREE_EXTRA_VH / 100) * window.innerHeight;
+    document.documentElement.style.setProperty('--tree-offset', `-${offsetPx.toFixed(2)}px`);
+  }
+
+  window.addEventListener('scroll', updateTree, { passive: true });
+  window.addEventListener('resize', updateTree, { passive: true });
+  updateTree();
+})();
+
 // Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
