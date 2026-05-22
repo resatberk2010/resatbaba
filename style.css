@@ -57,22 +57,23 @@ body {
   position: fixed;
   right: 0;
   top: 0;
-  width: 155px;
+  width: 200px;
   height: 260vh;
   z-index: 4;
   pointer-events: none;
-  opacity: 0.24;
+  opacity: 0.19;
   overflow: visible;
+  mix-blend-mode: multiply;
   transform: translateY(var(--tree-offset, 0px));
   will-change: transform;
 }
-.side-tree svg { width: 100%; height: 100%; }
+.side-tree svg { width: 100%; height: 100%; overflow: visible; }
 
 @media (max-width: 1100px) {
-  .side-tree  { width: 80px; opacity: 0.15; }
+  .side-tree  { width: 120px; opacity: 0.15; }
 }
 @media (max-width: 600px) {
-  .side-tree  { width: 68px; opacity: 0.18; }
+  .side-tree  { width: 88px; opacity: 0.14; }
 }
 
 /* ============================================================
@@ -1255,18 +1256,19 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  width: 155px;
+  width: 200px;
   height: 260vh;
   z-index: 4;
   pointer-events: none;
-  opacity: 0.20;
+  opacity: 0.17;
   overflow: visible;
+  mix-blend-mode: multiply;
   transform: scaleX(-1) translateY(var(--tree-offset, 0px));
   will-change: transform;
 }
-.side-tree-left svg { width: 100%; height: 100%; }
-@media (max-width: 1100px) { .side-tree-left { width: 80px; opacity: 0.13; } }
-@media (max-width: 600px)  { .side-tree-left { width: 68px; opacity: 0.15; } }
+.side-tree-left svg { width: 100%; height: 100%; overflow: visible; }
+@media (max-width: 1100px) { .side-tree-left { width: 120px; opacity: 0.13; } }
+@media (max-width: 600px)  { .side-tree-left { width: 88px; opacity: 0.12; } }
 
 /* ============================================================
    UÇAN MANOLYA YAPRAKÇIKLARI
